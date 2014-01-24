@@ -41,7 +41,7 @@ fonts_dir             = "assets/fonts"
  
 # Directory where Compass stores the Grid image, and the sites images are stored
 images_dir            = "assets/images"
- 
+
 # ==============================================================================
 # COMPASS TARGET DIRECTORY CONFIGURATION
 # ==============================================================================
