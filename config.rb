@@ -31,7 +31,7 @@ output_style          = :compact
 # ==============================================================================
  
 # Directory containing the SASS source files
-sass_dir              = "scss"
+sass_dir              = "dev-assets/scss"
  
 # Directory where Compass dumps the generated CSS files
 css_dir               = "assets/css"
@@ -41,6 +41,15 @@ fonts_dir             = "assets/fonts"
  
 # Directory where Compass stores the Grid image, and the sites images are stored
 images_dir            = "assets/images"
+
+# Directory where Compass loads images from to generate sprites
+sprite_load_path          = "dev-assets/sprites"
+
+#Directory where Compass stores generated images
+generated_images_dir        = images_dir
+
+# Production Assets URL
+http_images_path = "assets/images"
 
 # ==============================================================================
 # COMPASS TARGET DIRECTORY CONFIGURATION
