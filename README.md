@@ -1,6 +1,103 @@
-sass-strap
-================
+<h1 id="sass-strap">sass-strap</h1>
+<p>sass-strap is a modification of <a href="https://github.com/twbs/bootstrap-sass">bootstrap-sass</a> which is ready to use with <a href="http://alphapixels.com/prepros">Prepros</a>.</p>
+<p>It comes with a preconfigured <b>config.rb</b> file which you can modify to specify the directories where your Sass files and sprites will be compiled to, it also has a <b>dehash_sprite</b> function which can be enabled to removes the hash of the generated sprite.</p>
 
-sass-strap is a modification of [bootstrap-sass](https://github.com/twbs/bootstrap-sass) which is ready to use with [prepros](http://alphapixels.com/prepros).
+<h2>Prerequisites</h2>
+<ul>
+	<li><a href="http://alphapixels.com/prepros">Prepros</a></li>
+	<li><a href="http://alphapixels.com/prepros">Prepros Pro</a></li>
+</ul>
 
-It comes with a preconfigured config.rb file where you can specify the directories where your sass files and sprites will be compiled to, it also has a dehashing function in order to remove the hash of the generated sprite.
+<br>
+
+<h2>Installation</h2>
+
+<p>Include the <b>assets, dev-assets</b> folder and the <b>config.rb</b> file into your project root directory and load the project into Prepros. All development assets are located in the <b>dev-assets</b> folder, all production files will be compiled into the assets folder.</p>
+
+<br>
+
+<h2>Config.rb</h2>
+<p>The <b>config.rb</b> file holds all the settings that deal with sprite generation and scss files. The current settings are:</p>
+<ul>
+	<li><b>project_type</b></li>
+	<li><b>relative_assets</b></li>
+	<li><b>line_comments</b></li>
+	<li><b>output_style</b></li>
+	<li><b>dehash_sprite</b></li>
+	<li><b>sass_dir</b></li>
+	<li><b>css_dir</b></li>
+	<li><b>fonts_dir</b></li>
+	<li><b>images_dir</b></li>
+	<li><b>sprite_load_path</b></li>
+	<li><b>generated_images_dir</b></li>
+	<li><b>http_images_dir</b></li>
+	<li><b>http_path</b></li>
+	<li><b>http_css_path</b></li>
+	<li><b>http_fonts_path</b></li>
+	<li><b>http_images_path</b></li>
+</ul>
+<p>You can find the description for all of these settings except for the <b>dehash_sprite</b> setting in the <a href="http://compass-style.org/help/tutorials/configuration-reference/">Compass Configuration Reference</a>. The <b>dehash_sprite</b> sprite settings accepts a boolean value in order to enable/disable it.</p>
+<br>
+
+<h2>Dev-Assets Folder Structure</h2>
+
+<p>The development folder consists of your source file directories, these are:</p>
+
+<ul>
+	<li><b>js</b>: directory for js files, you can configure Prepros to compile them to the <b>assets/js</b> folder by changing your project settings.
+		<ul>
+			<li><b>bootstrap</b>: folder which contains individual bootstrap js files.</li>
+		</ul>
+	</li>
+	<li><b>scss</b>: directory for Sass files. This directory can be changed by modifying the <b>Sass_dir</b> setting in the <b>config.rb</b> file.
+		<ul>
+			<li><b>bootstrap</b>: folder which contains individual bootstrap Sass files.</li>
+		</ul>
+	</li>
+	<li><b>sprites</b>: directory for all images to be used for sprite generation. This directory can be changed by modifying the <b>sprite_load_path</b> setting in the <b>config.rb</b> file.</li>
+</ul>
+
+<br>
+
+<h2>Assets Folder Structure</h2>
+
+<p>The assets folder is where all your files will be compiled to, folders included are:</p>
+
+<ul>
+	<li><b>css</b>: where all your compiled css files will be stored. This path can be changed by modifying the <b>css_dir</b> setting in the <b>config.rb</b> file.</li>
+	<li><b>fonts</b>: where your web fonts are stored. This path can be changed by modifying the <b>fonts_dir</b> setting in the <b>config.rb</b> file.</li>
+	<li><b>images</b>: where all your generated sprites will be stored. This path can be changed by modifying the <b>images_dir</b> setting in the <b>config.rb</b> file.</li>
+	<li><b>js</b>: directory for js files, you can configure Prepros to store the js files from your <b>dev-assets/js</b> folder here by modifying your projects settings.</li>
+</ul>
+
+<br>
+
+<h2>Usage</h2>
+
+<h3>Bootstrap Sass Usage</h3>
+<p>You can choose to remove any bootstrap css files you don't want to use in your project by commenting out the <b>@import</b> for each css module in the <b>bootstrap.scss</b> file located in the <b>dev-assets/scss</b> folder.</p>
+
+<h3>Overriding Bootstrap Defaults</h3>
+<p>The <b>_variables.scss</b> file located in the <b>dev-assets/scss/bootstrap</b> folder contains all the default Sass variables for Bootstrap.</p>
+<p>If you want to change any of Bootstraps default settings you can do so by adding the Sass variable you want to override from the <b>_variable.scss</b> file to the <b>_bootstrap-override.scss</b> file located in the <b>dev-assets/scss</b> folder.</p>
+
+<h3>Generated CSS Output Style</h3>
+<p>You can specify how you want your output css to render by modifying the <b>output_style</b> setting in the <b>config.rb</b> file, you can choose from the following 4 options:</p>
+<ul>
+	<li>Nested (<b>:nested</b>)</li>
+	<li>Expanded (<b>:expanded</b>)</li>
+	<li>Compact (<b>:compact</b>)</li>
+	<li>Compressed (<b>:compressed</b>)</li>
+</ul>
+
+<h3>Bootstrap JS Usage</h3>
+<p>You can choose which js components you want to remove from your bootstrap.js file by removing the line where it is being imported in the <b>bootstrap.js</b> file located in the <b>dev-assets/js</b> folder.</p>
+
+<br>
+
+<h2>Credits</h2>
+
+<ul>
+	<li><a href="https://github.com/benmarte">Benjamin Marte</a></li>
+	<li><a href="https://github.com/twbs/bootstrap-sass#credits">bootstrap-sass team</a></li>
+</ul>
